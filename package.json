@@ -1,0 +1,16 @@
+{
+  "name": "nlp-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nlpjs/basic": "^4.27.0",
+    "@nlpjs/logger": "^4.26.1"
+  }
+}
