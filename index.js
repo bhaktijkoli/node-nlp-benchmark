@@ -28,10 +28,13 @@ const start = async () => {
   console.log("Model loading time: " + getDifferenceInSeconds(start, new Date()) + "s")
   const messages = JSON.parse(readFileSync(MESSAGES_PATH, 'utf8'))
   start = new Date()
+  await manager.process('en', messages[0])
+  console.log("Processing time for 1 message: " + getDifferenceInSeconds(start, new Date()) + "s")
+  start = new Date()
   for (const message of messages) {
     await manager.process('en', message)
   }
-  console.log("Processing time: " + getDifferenceInSeconds(start, new Date()) + "s")
+  console.log(`Processing time for ${messages.length} messages: ` + getDifferenceInSeconds(start, new Date()) + "s")
 }
 
 start()
